@@ -12,7 +12,7 @@ public class Service {
 	/**
 	 * Collection of contacts
 	 */
-	private List<Contact> contacts = null;
+	private final static List<Contact> contacts = new ArrayList<Contact>();
     
 	/**
 	 * The default constructor 
@@ -20,13 +20,13 @@ public class Service {
 	 * This adds some data for testing purpose
 	 */
     public Service (){
-    	contacts = new ArrayList<Contact>();
-    	
-    	// adding testing data
-    	contacts.add( new Contact (1L, "Nantes, France", "03838386"));
-    	contacts.add( new Contact (2L, "Rennes, France", "03838385"));
-    	contacts.add( new Contact (3L, "Paris, France", "03838384"));
-    	contacts.add( new Contact (4L, "Mans, France", "03838383"));
+    	// Add some testing data
+    	if ( contacts.size() == 0){
+    		contacts.add( new Contact (1L, "Nantes, France", "03838386"));
+        	contacts.add( new Contact (2L, "Rennes, France", "03838385"));
+        	contacts.add( new Contact (3L, "Paris, France", "03838384"));
+        	contacts.add( new Contact (4L, "Mans, France", "03838383"));
+    	}
     }
 
     /**
@@ -46,7 +46,7 @@ public class Service {
 	 * @return {@link Contact}}
 	 */
     public Contact findContactById ( final long id ){
-    	Optional<Contact> contact = this.contacts.stream().filter(cont -> { return true;}).findFirst();
+    	Optional<Contact> contact = contacts.stream().filter(cont -> { return cont.getId() == id ;}).findFirst();
     	return contact.isPresent() ? contact.get() : null;
     }
 }

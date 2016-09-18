@@ -39,6 +39,49 @@ public class Contact {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 	
-	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Contact))
+			return false;
+		Contact other = (Contact) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Contact : ");
+		builder.append(id);
+		builder.append(", ");
+		builder.append(address);
+		builder.append(", ");
+		builder.append(phone);
+		builder.append(" ");
+		return builder.toString();
+	}
 }
