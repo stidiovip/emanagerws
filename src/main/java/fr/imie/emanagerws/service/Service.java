@@ -49,4 +49,30 @@ public class Service {
     	Optional<Contact> contact = contacts.stream().filter(cont -> { return cont.getId() == id ;}).findFirst();
     	return contact.isPresent() ? contact.get() : null;
     }
+    
+    /**
+     * Adds a new contact
+     * @param contact : the contact to be added
+     * @return {@link Contact} the added contact
+     */
+    public Contact addContact ( Contact contact ){
+    	// TODO : should calculate the contact id, add the contact and then return the added contact
+    	return null;
+    }
+    
+    /**
+     * Updates the contact 
+     * @param contact : the contact to be updated
+     */
+    public void updateContact ( final Contact contact ){
+    	// TODO : should update the contact
+    }
+    
+    /**
+     * Deletes the contact 
+     * @param contact : the contact to be deleted
+     */
+    public void deleteContact ( final Contact contact ){
+    	// TODO : should delete the contact
+    }
 }
