@@ -27,6 +27,36 @@ public class ServiceTest {
 		assertTrue("The id should be equal to 2", contact.getId() == 2);
 	}
 	
+	@Test
+	public void shouldAddContact (){
+		
+		Contact contact = new Contact ();
+		contact.setAddress("Brest, France");
+		contact.setPhone("040506060");
+		
+		contact = service.addContact(contact);
+		
+		assertTrue(contact.getId() > 0);
+		
+		Contact addedContact = service.findContactById(contact.getId());
+		
+		assertEquals(addedContact, contact);
+	}
+	
+	@Test
+	public void shouldDeleteContact(){
+		// getting a contact
+		Contact contact = service.findContactById(1);
+		
+		// deleting it
+		service.deleteContact(contact);
+		
+		// assert it's null ( no more existing )
+		assertNull(service.findContactById(1));
+		
+		System.out.println(service.toString());
+	}
+	
 	@After
 	public void after (){
 		service = null;

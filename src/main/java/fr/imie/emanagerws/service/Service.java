@@ -13,6 +13,7 @@ public class Service {
 	 * Collection of contacts
 	 */
 	private final static List<Contact> contacts = new ArrayList<Contact>();
+    private static long lastId = 0;
     
 	/**
 	 * The default constructor 
@@ -63,7 +64,8 @@ public class Service {
      * @return {@link Contact} the added contact
      */
     public Contact addContact ( Contact contact ){
-    	contact.setId( contacts.size() + 1);
+    	lastId ++;
+    	contact.setId( lastId );
     	contacts.add(contact);
     	return contact;
     }
@@ -81,7 +83,7 @@ public class Service {
      * @param contact : the contact to be deleted
      */
     public void deleteContact ( final Contact contact ){
-    	// TODO : should delete the contact
+    	contacts.remove(contact);
     }
     
     /**
