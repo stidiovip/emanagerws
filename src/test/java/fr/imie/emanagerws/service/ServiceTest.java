@@ -1,6 +1,7 @@
 package fr.imie.emanagerws.service;
 
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
 
@@ -8,9 +9,11 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 
 import fr.imie.emanagerws.entity.Contact;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ServiceTest {
 	private Service service = null;
 	

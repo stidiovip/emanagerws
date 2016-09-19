@@ -13,7 +13,7 @@ public class Service {
 	 * Collection of contacts
 	 */
 	private final static List<Contact> contacts = new ArrayList<Contact>();
-    private static long lastId = 0;
+    private static long lastId = 4;
     
 	/**
 	 * The default constructor 
