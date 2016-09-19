@@ -1,6 +1,9 @@
 package fr.imie.emanagerws.service;
 
 import org.junit.Test;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
+
 import static org.junit.Assert.*;
 
 import org.junit.After;

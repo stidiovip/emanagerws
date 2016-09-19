@@ -40,7 +40,6 @@ public class Contact {
 		this.phone = phone;
 	}
 
-	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -57,16 +56,8 @@ public class Contact {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof Contact))
-			return false;
 		Contact other = (Contact) obj;
-		if (id != other.id)
-			return false;
-		return true;
+		return (this.id == other.id) && (this.address.equals(other.address)) && (this.phone.equals(other.phone));
 	}
 
 	/* (non-Javadoc)

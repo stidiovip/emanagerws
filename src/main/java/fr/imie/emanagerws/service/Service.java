@@ -31,10 +31,12 @@ public class Service {
 
     /**
      * Gets the list of contacts
+     * 
+     * Makes copy for immutability
      * @return
      */
 	public List<Contact> getContacts() {
-		return contacts;
+		return new ArrayList<>(contacts);
 	}
     
 	/**
@@ -47,7 +49,12 @@ public class Service {
 	 */
     public Contact findContactById ( final long id ){
     	Optional<Contact> contact = contacts.stream().filter(cont -> { return cont.getId() == id ;}).findFirst();
-    	return contact.isPresent() ? contact.get() : null;
+    	
+    	if (contact.isPresent()){
+    		return new Contact (contact.get().getId(), contact.get().getAddress(), contact.get().getPhone());
+    	}
+    	
+    	return null;
     }
     
     /**
@@ -56,8 +63,9 @@ public class Service {
      * @return {@link Contact} the added contact
      */
     public Contact addContact ( Contact contact ){
-    	// TODO : should calculate the contact id, add the contact and then return the added contact
-    	return null;
+    	contact.setId( contacts.size() + 1);
+    	contacts.add(contact);
+    	return contact;
     }
     
     /**
@@ -74,5 +82,18 @@ public class Service {
      */
     public void deleteContact ( final Contact contact ){
     	// TODO : should delete the contact
+    }
+    
+    /**
+     * Gets the contacts in string
+     */
+    public String toString (){
+    	StringBuilder sb = new StringBuilder();
+    	
+    	contacts.stream().forEach(contact -> {
+    		sb.append(contact.toString());
+    	});
+    	
+    	return sb.toString();
     }
 }
