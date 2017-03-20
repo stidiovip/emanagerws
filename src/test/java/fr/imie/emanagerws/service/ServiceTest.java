@@ -3,8 +3,6 @@ package fr.imie.emanagerws.service;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -56,8 +54,6 @@ public class ServiceTest {
 		
 		// assert it's null ( no more existing )
 		assertNull(service.findContactById(1));
-		
-		System.out.println(service.toString());
 	}
 	
 	@After
