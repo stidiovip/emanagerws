@@ -166,8 +166,8 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:https://github.com/stidiovip/emanagerws.git</connection>
-		<developerConnection>scm:git:https://github.com/stidiovip/emanagerws.git</developerConnection>
+		<connection>scm:git:git@github.com:stidiovip/emanagerws.git</connection>
+		<developerConnection>scm:git:git@github.com:stidiovip/emanagerws.git</developerConnection>
 		<tag>2.0-SNAPSHOT</tag>
 	</scm>
 
