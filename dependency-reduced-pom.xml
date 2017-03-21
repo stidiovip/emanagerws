@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.imie.emanagerws</groupId>
   <artifactId>emanagerws</artifactId>
-  <version>1.0</version>
+  <version>2.0</version>
   <scm>
-    <connection>scm:git:https://github.com/stidiovip/emanagerws.git</connection>
-    <developerConnection>scm:git:https://github.com/stidiovip/emanagerws.git</developerConnection>
-    <tag>2.0-SNAPSHOT</tag>
+    <connection>scm:git:https://stidiovip:ThisIsForTesting11@github.com/stidiovip/emanagerws.git</connection>
+    <developerConnection>scm:git:https://stidiovip:ThisIsForTesting11@github.com/stidiovip/emanagerws.git</developerConnection>
+    <tag>2.0</tag>
   </scm>
   <build>
     <plugins>

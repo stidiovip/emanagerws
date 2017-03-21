@@ -151,10 +151,5 @@
 		</plugins>
 	</build>
 
-	<scm>
-		<connection>scm:git:https://stidiovip:ThisIsForTesting11@github.com/stidiovip/emanagerws.git</connection>
-		<developerConnection>scm:git:https://stidiovip:ThisIsForTesting11@github.com/stidiovip/emanagerws.git</developerConnection>
-		<tag>2.0-SNAPSHOT</tag>
-	</scm>
 
 </project>
