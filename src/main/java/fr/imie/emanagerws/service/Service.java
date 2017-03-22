@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import fr.imie.emanagerws.entity.Contact;
 
-
 public class Service {
 	
 	/**
@@ -69,15 +68,7 @@ public class Service {
     	contacts.add(contact);
     	return contact;
     }
-    
-    /**
-     * Updates the contact 
-     * @param contact : the contact to be updated
-     */
-    public void updateContact ( final Contact contact ){
-    	// TODO : should update the contact
-    }
-    
+	
     /**
      * Deletes the contact 
      * @param contact : the contact to be deleted
