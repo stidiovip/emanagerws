@@ -2,10 +2,7 @@ package fr.imie.emanagerws.resource;
 
 import java.util.List;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 import fr.imie.emanagerws.entity.Contact;
@@ -31,5 +28,15 @@ public class ContactResource {
     @Path("/{id}")
     public Contact getContactByIdWithPathParam(@PathParam("id") final long id){
     	return this.service.findContactById(id);
+    }
+
+    @POST
+    public Contact addContact (Contact contact){
+        return this.service.addContact(contact);
+    }
+
+    @DELETE
+    public void deleteContact (Contact contact){
+        this.service.deleteContact(contact);
     }
 }
